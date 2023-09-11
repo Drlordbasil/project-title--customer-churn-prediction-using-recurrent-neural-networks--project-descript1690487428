@@ -47,7 +47,7 @@ model.add(Dropout(0.2))
 model.add(Dense(units=1, activation='sigmoid'))
 
 # Compile the model
-optimizer = Adam(learning_rate=0.001)
+optimizer = Adam(lr=0.001)  # Use 'lr' instead of 'learning_rate'
 model.compile(optimizer=optimizer, loss='binary_crossentropy',
               metrics=['accuracy'])
 
