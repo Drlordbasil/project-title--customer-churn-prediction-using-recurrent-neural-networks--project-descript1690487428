@@ -40,14 +40,14 @@ test_data_gen = TimeseriesGenerator(
 # Build the RNN model
 model = Sequential()
 model.add(LSTM(units=32, return_sequences=True,
-          input_shape=(10, X_train.shape[1])))
+               input_shape=(10, X_train.shape[1])))
 model.add(Dropout(0.2))
 model.add(LSTM(units=32))
 model.add(Dropout(0.2))
 model.add(Dense(units=1, activation='sigmoid'))
 
 # Compile the model
-optimizer = Adam(lr=0.001)  # Use 'lr' instead of 'learning_rate'
+optimizer = Adam(learning_rate=0.001)  # Use 'learning_rate' instead of 'lr'
 model.compile(optimizer=optimizer, loss='binary_crossentropy',
               metrics=['accuracy'])
 
